@@ -1,3 +1,5 @@
+import sys
+sys.path.append("..")
 from data_utils import load_csv, train_test_split
 from one_vs_one import one_vs_one, get_predictions
 import matplotlib.pyplot as plt
@@ -27,7 +29,7 @@ def evaluate_and_plot(models, error_histories, activation, train_data, test_data
     plt.ylabel("Average Error")
     plt.title(f"Dataset1 - Error vs Epoch ({activation})")
     plt.legend()
-    plt.savefig(f"dataset1_{activation}_error_vs_epoch.png", dpi=130, bbox_inches="tight")
+    plt.savefig(f"results/dataset1_{activation}_error_vs_epoch.png", dpi=130, bbox_inches="tight")
     plt.show()
 
     # Predictions on test data
@@ -43,7 +45,7 @@ def evaluate_and_plot(models, error_histories, activation, train_data, test_data
     disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=CLASS_LABELS)
     disp.plot(cmap="Blues")
     plt.title(f"Confusion Matrix - Dataset1 ({activation})")
-    plt.savefig(f"dataset1_{activation}_confusion_matrix.png", dpi=130, bbox_inches="tight")
+    plt.savefig(f"results/dataset1_{activation}_confusion_matrix.png", dpi=130, bbox_inches="tight")
     plt.show()
 
 
