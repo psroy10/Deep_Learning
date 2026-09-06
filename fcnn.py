@@ -127,7 +127,7 @@ class FCNN:
     error=self.compute_error(target,output)
     return error
 
-  def train(self,X,y,learning_rate=0.1,max_epoches=1000,error_threshold=0.001):
+  def train(self,X,y,learning_rate=0.1,max_epochs=1000,error_threshold=0.001):
     error_history=[]
     n=len(X)
 
@@ -149,6 +149,8 @@ class FCNN:
         break
 
     return error_history
+
+
   def predict(self, x):
     output, _ = self.forward(x)
     return output
