@@ -131,7 +131,7 @@ class FCNN:
     error_history=[]
     n=len(X)
 
-    for epoch in range(max_epoches):
+    for epoch in range(max_epochs):
       indices=list(range(n))
       random.shuffle(indices)
 
